@@ -2,7 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-// const routes = require('./routes');
+const routes = require('./routes');
 require('dotenv').config();
 
 // declare port and initialize express
@@ -34,7 +34,7 @@ const allowCrossDomain = function (req, res, next) {
 app.use(allowCrossDomain);
 
 // pass in routes to express
-// app.use(routes);
+app.use(routes);
 
 app.listen(PORT, err => {
     if (err) console.log(err);
